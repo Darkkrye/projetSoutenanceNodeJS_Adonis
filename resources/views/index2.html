@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Questions</title>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-cosmo.min.css">
+    <link rel="stylesheet" href="/css/perso.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/prism.css" media="screen" title="no title" charset="utf-8">
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/perso.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">AT Quizz</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#home"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="#produit">Notre produit</a></li>
+                    <li><a href="#api">API</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#save_question">Enregistrer une question</a></li>
+                    <li><a href="#db_content">Contenu de la Base de Données</a></li>
+                    <li><a href="#test">Tester les requêtes disponibles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="home">
+        <img src="img/questionImage.jpg" class="imageHome" alt="" />
+    </div>
+
+	<div class="container">
+	    <div id="produit" class="col-xs-12 produit">
+            <h1>Notre produit</h1>
+            <p>
+                Notre produit se compose en 2 principales parties :
+                <ul>
+                    <li>Un site internet permettant de connaître notre produit et d'ajouter des questions,</li>
+                    <li>Une API REST [GET] envoyant des questions. A vous de l'adapter pour en faire votre propre Quizz.</li>
+                    <li>Cette même API REST [POST] recevant des questions pour permettre à vos utilisateur de créer leurs propres questions.</li>
+                </ul>
+
+                <br />
+
+                Une 3<sup>ème</sup> partie est en cours d'élaboration :
+                <ul>
+                    <li>Une application / un jeu pour Apple TV 4 permettant de jouer à plusieurs et de répondre aux questions disponibles.</li>
+                </ul>
+
+                <br />
+
+                // <i>TODOS :</i>
+                <ul>
+                    <li>La possibilité de demander des questions par Catégories disponibles.</li>
+                </ul>
+            </p>
+	    </div>
+
+        <div id="api" class="col-xs-12 api">
+            <h1>API</h1>
+            <p>
+                Notre API est une API REST standard avec 2 principales routes :
+                <ul>
+                    <li>GET</li>
+                </ul>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">[GET] /api/question/:number</h3>
+                    </div>
+                    <div class="panel-body">
+                        Voici un exemple de JSON reçu lors de l'appel à cette URL (l'ID de la question correspondant au "number" renseigné dans la route) :
+                        <script src="https://gist.github.com/Darkkrye/6be175ca359262dc656019e00d1ac217.js"></script>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">[GET] /api/questions/:number?</h3>
+                    </div>
+                    <div class="panel-body">
+                        Voici un exemple de JSON reçu lors de l'appel à cette URL :
+                        <script src="https://gist.github.com/Darkkrye/ddf34f95868bb1cda25bf5179919dadb.js"></script>
+                    </div>
+                </div>
+
+                <ul>
+                    <li>POST</li>
+                </ul>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">[POST] /api/question/add</h3>
+                    </div>
+                    <div class="panel-body">
+                        Voici un exemple de JSON à envoyer lors de la création d'une question :
+                        <script src="https://gist.github.com/Darkkrye/5e59f5de73302a94a8a445c4fcdf117f.js"></script>
+                    </div>
+                </div>
+            </p>
+        </div>
+
+        <div id="contact" class="col-xs-12 contact">
+            <h1>Contact</h1>
+            <p>
+                Vous pouvez nous contacter grâce au formulaire suivant :
+                <div class="well col-xs-6 col-xs-offset-3">
+                    <form class="" action="index.html" method="post">
+                        <div class="form-group">
+                            <label for="inputName">Nom</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFirstName">Prénom</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="Prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMail">Email</label>
+                            <input type="mail" class="form-control" id="inputMail" placeholder="Email">
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label for="object">Objet</label>
+                            <input type="text" class="form-control" id="object" placeholder="Objet">
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label for="messageContent">Contenu du message</label>
+                            <textarea id="messageContent" rows="8" cols="70"></textarea>
+                        </div>
+
+                        <hr />
+
+                        <button type="submit" class="btn btn-success">Envoyer</button>
+                        <button type="reset" class="btn btn-warning">Annuler</button>
+                    </form>
+                </div>
+            </p>
+        </div>
+
+        <div id="save_question" class="col-xs-12 save_question">
+            <h1>Enregistrer une question</h1>
+            <p>
+                Vous pouvez enregistrer, ici aussi, une question pour la retrouver avec l'API :
+                <div class="well col-xs-6 col-xs-offset-3">
+                    <form class="" action="{{ 'addQuestion' | route() }}" method="post">
+                        <div class="form-group">
+                            <label for="Entitled">Question</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="Entitled" name="Entitled" placeholder="Question">
+                                <div class="input-group-addon">?</div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label for="Categories">Categories</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="Categories" name="Categories" placeholder="Categories">
+                                <div class="input-group-addon">Séparées par des virgules</div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label for="answer1">Réponse 1</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="answer1" name="answer1" placeholder="Réponse 1">
+                                <div class="input-group-addon">Bonne réponse : <input type="radio" name="good_answer" checked="true" value="1"></div>
+                            </div>
+
+                            <label for="answer2">Réponse 2</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="answer2" name="answer2" placeholder="Réponse 2">
+                                <div class="input-group-addon">Bonne réponse : <input type="radio" name="good_answer" value="2"></div>
+                            </div>
+
+                            <label for="answer3">Réponse 3</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="answer3" name="answer3" placeholder="Réponse 3">
+                                <div class="input-group-addon">Bonne réponse : <input type="radio" name="good_answer" value="3"></div>
+                            </div>
+
+                            <label for="answer4">Réponse 4</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="answer4" name="answer4" placeholder="Réponse 4">
+                                <div class="input-group-addon">Bonne réponse : <input type="radio" name="good_answer" value="4"></div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <button type="submit" class="btn btn-success">Envoyer</button>
+                        <button type="reset" class="btn btn-warning">Annuler</button>
+                    </form>
+                </div>
+            </p>
+        </div>
+
+        <div id="db_content" class="col-xs-12 db_content">
+            <h1>Contenu de la Base de Données</h1>
+            <p>
+                <pre><code>{{ questions | safe }}</code></pre>
+            </p>
+        </div>
+
+        <div id="test" class="col-xs-12 db_content">
+            <h1>Tester les requêtes disponibles</h1>
+            <p>
+                <div class="col-xs-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <form id="formQuestion" class="form-inline">
+                                <div class="form-group">
+                                    <label for="number"><h4>[GET] /api/question/</h4></label>
+                                    <input type="text" id="inputQuestion" name="number" class="form-control" placeholder=":number" style="width: 100px;" />
+                                </div>
+                                <button id="buttonQuestion" type="submit" class="btn btn-default pull-right"><span class="glyphicon glyphicon-ok"></span></button>
+                            </form>
+                        </div>
+                        <div class="panel-body">
+                            <div class="well">
+                                <pre><code id="question" ></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <form id="formQuestions" class="form-inline">
+                                <div class="form-group">
+                                    <label for="number"><h4>[GET] /api/questions/</h4></label>
+                                    <input type="text" id="inputQuestions" name="number" class="form-control" placeholder=":number?" style="width: 100px;" />
+                                </div>
+                                <button id="buttonQuestions" type="submit" class="btn btn-default pull-right"><span class="glyphicon glyphicon-ok"></span></button>
+                            </form>
+                        </div>
+                        <div class="panel-body">
+                            <div class="well">
+                                <pre><code id="questions"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </div>
+	</div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#formQuestion').submit(function(e) {
+                e.preventDefault();
+                if ($('#inputQuestion').val() == '') {
+                    alert("Saisissez un nombre !");
+                    $('#inputQuestion').focus();
+                } else if (!$.isNumeric($('#inputQuestion').val())) {
+                    alert("Saisissez un nombre !");
+                    $('#inputQuestion').focus();
+                } else {
+                    $.ajax({
+                        url : '/api/question/' + $('#inputQuestion').val(),
+                        type : 'GET',
+                        dataType : 'json',
+                        success : function(result, status){
+                            $('#question').html("Status: " + status + "\n\nResult:\n" + JSON.stringify(result));
+                        },
+                        error : function(result, status, error){
+                            $('#question').html("Status: " + status + "\n\nResult:\n" + JSON.stringify(result) + "\n\nError: " + error);
+                        }
+                    });
+                }
+            });
+
+            $('#formQuestions').submit(function(e) {
+                e.preventDefault();
+                if ($('#inputQuestions').val() == '') {
+                    $.ajax({
+                        url : '/api/questions',
+                        type : 'GET',
+                        dataType : 'json',
+                        success : function(result, status){
+                            $('#questions').html("Status: " + status + "\n\nResult:\n" + JSON.stringify(result));
+                        },
+                        error : function(result, status, error){
+                            $('#questions').html("Status: " + status + "\n\nResult:\n" + JSON.stringify(result) + "\n\nError: " + error);
+                        }
+                    });
+                } else if ($.isNumeric($('#inputQuestions').val())) {
+                    $.ajax({
+                        url : '/api/questions/' + $('#inputQuestions').val(),
+                        type : 'GET',
+                        dataType : 'json',
+                        success : function(result, status){
+                            $('#questions').html("Status: " + status + "\n\nResult:\n" + JSON.stringify(result));
+                        },
+                        error : function(result, status, error){
+                            $('#questions').html("Status: " + status + "\n\nResult:\n" + JSON.stringify(result) + "\n\nError: " + error);
+                        }
+                    });
+                } else {
+                    alert("Saisissez un nombre ou laissez le champ vide !");
+                    $('#inputQuestions').focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
